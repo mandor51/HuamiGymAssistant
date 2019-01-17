@@ -20,22 +20,22 @@ import android.widget.FrameLayout;
      * The {@code layout_box} attribute is ignored on a device with a rectangular
      * screen.
      */
-    public class BoxInsetLayout extends FrameLayout {
+    public class BoxInsetLayout2 extends FrameLayout {
         private static float FACTOR = 0.146467f; //(1 - sqrt(2)/2)/2
         private static final int DEFAULT_CHILD_GRAVITY = Gravity.TOP | Gravity.START;
         private Rect mForegroundPadding;
         private boolean mLastKnownRound;
         private Rect mInsets;
 
-        public BoxInsetLayout(Context context) {
+        public BoxInsetLayout2(Context context) {
             this(context, null);
         }
 
-        public BoxInsetLayout(Context context, AttributeSet attrs) {
+        public BoxInsetLayout2(Context context, AttributeSet attrs) {
             this(context, attrs, 0);
         }
 
-        public BoxInsetLayout(Context context, AttributeSet attrs, int defStyle) {
+        public BoxInsetLayout2(Context context, AttributeSet attrs, int defStyle) {
             super(context, attrs, defStyle);
             // make sure we have foreground padding object
             if (mForegroundPadding == null) {
@@ -94,7 +94,7 @@ import android.widget.FrameLayout;
             for (int i = 0; i < count; i++) {
                 final View child = getChildAt(i);
                 if (child.getVisibility() != GONE) {
-                    LayoutParams lp = (BoxInsetLayout.LayoutParams) child.getLayoutParams();
+                    LayoutParams lp = (BoxInsetLayout2.LayoutParams) child.getLayoutParams();
                     int marginLeft = 0;
                     int marginRight = 0;
                     int marginTop = 0;
@@ -150,7 +150,7 @@ import android.widget.FrameLayout;
             // adjust the match parent children
             for (int i = 0; i < count; i++) {
                 final View child = getChildAt(i);
-                final LayoutParams lp = (BoxInsetLayout.LayoutParams) child.getLayoutParams();
+                final LayoutParams lp = (BoxInsetLayout2.LayoutParams) child.getLayoutParams();
                 int childWidthMeasureSpec;
                 int childHeightMeasureSpec;
                 int plwf = getPaddingLeft() + mForegroundPadding.left;
@@ -309,7 +309,7 @@ import android.widget.FrameLayout;
 
         @Override
         public LayoutParams generateLayoutParams(AttributeSet attrs) {
-            return new BoxInsetLayout.LayoutParams(getContext(), attrs);
+            return new BoxInsetLayout2.LayoutParams(getContext(), attrs);
         }
 
         /**
@@ -326,8 +326,8 @@ import android.widget.FrameLayout;
 
             public LayoutParams(Context context, AttributeSet attrs) {
                 super(context, attrs);
-                TypedArray a = context.obtainStyledAttributes(attrs, com.example.msikorski.huamigymassistant.R.styleable.BoxInsetLayout_Layout, 0, 0);
-                boxedEdges = a.getInt(com.example.msikorski.huamigymassistant.R.styleable.BoxInsetLayout_Layout_layout_box, BOX_NONE);
+                TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.BoxInsetLayout_Layout, 0, 0);
+                boxedEdges = a.getInt(R.styleable.BoxInsetLayout_Layout_layout_box, BOX_NONE);
                 a.recycle();
             }
 

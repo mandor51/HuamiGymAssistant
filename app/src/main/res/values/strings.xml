@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Gym</string>
     <string name="error">Error!</string>
     <string name="timeout">Timeout!</string>
 </resources>

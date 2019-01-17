@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowInsets;
 import android.widget.TextView;
 
 import com.huami.watch.transport.DataBundle;
@@ -27,7 +28,7 @@ import com.huami.watch.util.Log;
 import com.kieronquinn.library.amazfitcommunication.Transporter;
 import com.kieronquinn.library.amazfitcommunication.TransporterClassic;
 
-public class MainActivity extends AppCompatActivity implements WearableActionDrawer.OnMenuItemClickListener{
+public class TestActivity extends AppCompatActivity implements WearableActionDrawer.OnMenuItemClickListener{
 
     private TransporterClassic transporter;
 
@@ -50,53 +51,22 @@ public class MainActivity extends AppCompatActivity implements WearableActionDra
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.snap_helper);
+        setContentView(R.layout.activity_m);
 
-        mContext = this.getApplicationContext();
+        Log.d("brand=", Build.BRAND.toString() + " device=" + Build.DEVICE.toString() + " model=" + Build.MODEL + " display=" + Build.DISPLAY.toString() + " product=" + Build.PRODUCT.toString());
+
+        /*mContext = this.getApplicationContext();
 
         recyclerView = findViewById(R.id.rec1);
-
-        //LinearSnapHelper snapHelper = new LinearSnapHelper();
-
         LinearLayoutManager layoutManagerCenter = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManagerCenter);
         appListCenterAdapter = new AppListAdapter();
 
-
         recyclerView.setAdapter(appListCenterAdapter);
-        snapHelperCenter = new LinearSnapHelper();/*{
-                @Override
-                public int findTargetSnapPosition(RecyclerView.LayoutManager layoutManager, int velocityX, int velocityY) {
-                    View centerView = findSnapView(layoutManager);
-                    if (centerView == null)
-                        return RecyclerView.NO_POSITION;
+        snapHelperCenter = new LinearSnapHelper();
+        snapHelperCenter.attachToRecyclerView(recyclerView);*/
 
-                    int position = layoutManager.getPosition(centerView);
-                    int targetPosition = -1;
-                    if (layoutManager.canScrollHorizontally()) {
-                        if (velocityX < 0) {
-                            targetPosition = position - 1;
-                        } else {
-                            targetPosition = position + 1;
-                        }
-                    }
-
-                    if (layoutManager.canScrollVertically()) {
-                        if (velocityY < 0) {
-                            targetPosition = position - 1;
-                        } else {
-                            targetPosition = position + 1;
-                        }
-                    }
-
-                    final int firstItem = 0;
-                    final int lastItem = layoutManager.getItemCount() - 1;
-                    targetPosition = Math.min(lastItem, Math.max(targetPosition, firstItem));
-                    return targetPosition;
-                }
-        };*/
-        snapHelperCenter.attachToRecyclerView(recyclerView);
-
+        //LinearSnapHelper snapHelper = new LinearSnapHelper();
         /* {
 
             private OrientationHelper mVerticalHelper, mHorizontalHelper;
@@ -225,8 +195,6 @@ public class MainActivity extends AppCompatActivity implements WearableActionDra
         };*/
         //snapHelper.attachToRecyclerView(recyclerView);
 
-        Log.d("brand=", Build.BRAND.toString() + " device=" + Build.DEVICE.toString() + " model=" + Build.MODEL + " display=" + Build.DISPLAY.toString() + " product=" + Build.PRODUCT.toString());
-
         //final GridViewPager mGridPager = findViewById(R.id.pager);
         //mGridPager.setAdapter(new SampleGridPagerAdapter(this, getFragmentManager()));
 
@@ -335,11 +303,11 @@ public class MainActivity extends AppCompatActivity implements WearableActionDra
 
             public ViewHolder(View itemView) {
                 super(itemView);
-                textViewName = itemView.findViewById(R.id.textSm);
+                //textViewName = itemView.findViewById(R.id.textSm);
             }
 
             public void onBind(final int position) {
-                    textViewName.setText("" + position*2.5);
+                    //textViewName.setText("" + position*2.5);
             }
         }
     }
@@ -347,10 +315,10 @@ public class MainActivity extends AppCompatActivity implements WearableActionDra
     @Override
     public void onPause(){
         super.onPause();
-        View snapView = snapHelperCenter.findSnapView(recyclerView.getLayoutManager());
+        /*View snapView = snapHelperCenter.findSnapView(recyclerView.getLayoutManager());
         int snapPosition = recyclerView.getLayoutManager().getPosition(snapView);
 
-        Log.d("newnew", "SnapPostion=" + snapPosition*2.5);
+        Log.d("newnew", "SnapPostion=" + snapPosition*2.5);*/
     }
 
     @Override

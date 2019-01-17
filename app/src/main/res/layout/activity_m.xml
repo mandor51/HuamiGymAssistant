@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.wearable.view.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.mandor51.huamigymassistant.HuamiBoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    android:padding="33dp"
-    tools:context="com.mandor51.huamigymassistant.MainActivity">
+    android:fitsSystemWindows="true"
+    tools:context="com.mandor51.huamigymassistant.TestActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:id="@+id/sampleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
+            android:layout_gravity="left|top"
             android:text="Loading!"
             android:textColor="@color/colorPrimaryText" />
 
@@ -37,4 +37,4 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"/>
 
-</android.support.wearable.view.BoxInsetLayout>
+</com.mandor51.huamigymassistant.HuamiBoxInsetLayout>
