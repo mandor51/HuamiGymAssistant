@@ -7,18 +7,12 @@ import android.hardware.SensorManager;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.LinearSnapHelper;
+
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
-import android.support.wearable.view.drawer.WearableActionDrawer;
-import android.support.wearable.view.drawer.WearableDrawerLayout;
-import android.support.wearable.view.drawer.WearableNavigationDrawer;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowInsets;
 import android.widget.TextView;
 
 import com.huami.watch.transport.DataBundle;
@@ -28,13 +22,9 @@ import com.huami.watch.util.Log;
 import com.kieronquinn.library.amazfitcommunication.Transporter;
 import com.kieronquinn.library.amazfitcommunication.TransporterClassic;
 
-public class TestActivity extends AppCompatActivity implements WearableActionDrawer.OnMenuItemClickListener{
+public class TestActivity extends AppCompatActivity {
 
     private TransporterClassic transporter;
-
-    private WearableDrawerLayout mWearableDrawerLayout;
-    private WearableNavigationDrawer mWearableNavigationDrawer;
-    private WearableActionDrawer mWearableActionDrawer;
 
     private AppListAdapter appListCenterAdapter;
     SnapHelper snapHelperCenter;
@@ -51,7 +41,7 @@ public class TestActivity extends AppCompatActivity implements WearableActionDra
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_m);
+        setContentView(R.layout.activity_main);
 
         Log.d("brand=", Build.BRAND.toString() + " device=" + Build.DEVICE.toString() + " model=" + Build.MODEL + " display=" + Build.DISPLAY.toString() + " product=" + Build.PRODUCT.toString());
 
@@ -364,11 +354,4 @@ public class TestActivity extends AppCompatActivity implements WearableActionDra
             }
         });
     }
-
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        return false;
-    }
-
-
 }

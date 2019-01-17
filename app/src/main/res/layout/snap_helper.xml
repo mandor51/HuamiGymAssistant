@@ -21,7 +21,7 @@
         android:layout_gravity="center_horizontal"
         android:paddingStart="65dp"
         android:paddingEnd="65dp"
-        android:clipToPadding="false"/>
+        android:clipToPadding="false" />
 
 
 </LinearLayout>
