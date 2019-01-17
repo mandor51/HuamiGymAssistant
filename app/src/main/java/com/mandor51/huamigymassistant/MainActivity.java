@@ -1,20 +1,16 @@
-package com.example.msikorski.myapplication;
+package com.mandor51.huamigymassistant;
 
 import android.content.Context;
 import android.hardware.Sensor;
-import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSnapHelper;
-import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
-import android.support.wearable.view.GridViewPager;
 import android.support.wearable.view.drawer.WearableActionDrawer;
 import android.support.wearable.view.drawer.WearableDrawerLayout;
 import android.support.wearable.view.drawer.WearableNavigationDrawer;
@@ -22,8 +18,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.huami.watch.transport.DataBundle;
@@ -32,17 +26,6 @@ import com.huami.watch.transport.TransportDataItem;
 import com.huami.watch.util.Log;
 import com.kieronquinn.library.amazfitcommunication.Transporter;
 import com.kieronquinn.library.amazfitcommunication.TransporterClassic;
-import com.kieronquinn.library.amazfitcommunication.internet.LocalHTTPRequest;
-import com.kieronquinn.library.amazfitcommunication.internet.LocalHTTPResponse;
-import com.kieronquinn.library.amazfitcommunication.internet.LocalURLConnection;
-
-import org.apache.commons.io.IOUtils;
-
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements WearableActionDrawer.OnMenuItemClickListener{
 

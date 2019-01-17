@@ -1,4 +1,4 @@
-package com.example.msikorski.myapplication;
+package com.mandor51.huamigymassistant;
 
 import java.util.ArrayList;
 

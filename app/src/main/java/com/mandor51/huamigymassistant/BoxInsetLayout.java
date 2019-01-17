@@ -1,4 +1,4 @@
-package com.example.msikorski.myapplication;
+package com.mandor51.huamigymassistant;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -326,8 +326,8 @@ import android.widget.FrameLayout;
 
             public LayoutParams(Context context, AttributeSet attrs) {
                 super(context, attrs);
-                TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.BoxInsetLayout_Layout, 0, 0);
-                boxedEdges = a.getInt(R.styleable.BoxInsetLayout_Layout_layout_box, BOX_NONE);
+                TypedArray a = context.obtainStyledAttributes(attrs, com.example.msikorski.huamigymassistant.R.styleable.BoxInsetLayout_Layout, 0, 0);
+                boxedEdges = a.getInt(com.example.msikorski.huamigymassistant.R.styleable.BoxInsetLayout_Layout_layout_box, BOX_NONE);
                 a.recycle();
             }
 

@@ -1,4 +1,4 @@
-package com.example.msikorski.myapplication;
+package com.mandor51.huamigymassistant;
 
 public class SimplePage {
     public String mTitle;
