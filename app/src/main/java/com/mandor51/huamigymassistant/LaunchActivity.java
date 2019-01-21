@@ -17,6 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class LaunchActivity extends AppCompatActivity {
 
@@ -86,7 +87,7 @@ public class LaunchActivity extends AppCompatActivity {
                 textView2.setText(accurancy);
 
                 SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                Date date = new Date(event.timestamp);
+                Date date = new Date(TimeUnit.MILLISECONDS.convert(event.timestamp, TimeUnit.NANOSECONDS));
                 textView3.setText(sf.format(date));
             }
 
