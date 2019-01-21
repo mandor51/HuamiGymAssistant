@@ -12,11 +12,17 @@ import android.widget.TextView;
 
 import com.huami.watch.util.Log;
 
+import java.security.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class LaunchActivity extends AppCompatActivity {
 
     TextView textView;
+    TextView textView2;
+    TextView textView3;
     SensorManager sensorManager;
     SensorEventListener heartRateSensorListener;
 
@@ -26,6 +32,8 @@ public class LaunchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_launch);
 
         textView = findViewById(R.id.textView);
+        textView2 = findViewById(R.id.textView2);
+        textView3 = findViewById(R.id.textView3);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -47,7 +55,39 @@ public class LaunchActivity extends AppCompatActivity {
             @Override
             public void onSensorChanged(SensorEvent event) {
                 Log.d("newnew", "" + event.values[0]);
+
+                int status = event.accuracy;
+                String accurancy;
+
+                switch (status){
+                    case SensorManager.SENSOR_STATUS_NO_CONTACT:
+                        accurancy = "NO CONTACT";
+                        break;
+                    case SensorManager.SENSOR_STATUS_UNRELIABLE:
+                        accurancy = "UNRELIABLE";
+                        break;
+                    case SensorManager.SENSOR_STATUS_ACCURACY_LOW:
+                        accurancy = "LOW";
+                        break;
+                    case SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM:
+                        accurancy = "MEDIUM";
+                        break;
+                    case SensorManager.SENSOR_STATUS_ACCURACY_HIGH:
+                        accurancy = "HIGH";
+                        break;
+                    default:
+                        accurancy = "" + status;
+                }
+
+
+                Log.d("newnew", "" + event.accuracy);
+                Log.d("newnew", "" + event.timestamp);
                 textView.setText("" + event.values[0]);
+                textView2.setText(accurancy);
+
+                SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                Date date = new Date(event.timestamp);
+                textView3.setText(sf.format(date));
             }
 
             @Override
